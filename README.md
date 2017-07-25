@@ -21,10 +21,16 @@ Then add **hubot-akamai-cache-purge** to your `external-scripts.json`:
 ## Sample Interaction
 
 ```
-user1>> hubot hello
-hubot>> hello!
+user1>> hubot akamai purge cache http://example.com/path/to/contents.jpg
+hubot>> Success: estimated time 5 sec
 ```
 
-## NPM Module
+## Configuration
 
-https://www.npmjs.com/package/hubot-akamai-cache-purge
+This script need api credentials.
+see. https://developer.akamai.com/introduction/Prov_Creds.html
+
+* `HUBOT_AKAMAI_CLIENT_SECRET`
+* `HUBOT_AKAMAI_HOST`
+* `HUBOT_AKAMAI_ACCESS_TOKEN`
+* `HUBOT_AKAMAI_CLIENT_TOKEN`
