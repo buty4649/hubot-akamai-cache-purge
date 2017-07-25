@@ -9,11 +9,11 @@
 
   "repository": {
     "type": "git",
-    "url": "git://github.com/hubot-scripts/hubot-akamai-cache-purge.git"
+    "url": "git://github.com/buty4649/hubot-akamai-cache-purge.git"
   },
 
   "bugs": {
-    "url": "https://github.com/hubot-scripts/hubot-akamai-cache-purge/issues"
+    "url": "https://github.com/buty4649/hubot-akamai-cache-purge/issues"
   },
 
   "dependencies": {
