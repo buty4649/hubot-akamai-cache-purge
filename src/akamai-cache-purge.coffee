@@ -24,8 +24,8 @@ module.exports = (robot) ->
   EdgeGrid = require 'edgegrid'
 
   robot.respond /akamai (purge|invalidate|delete) cache (https?\S+)/i, (res) ->
-    action = if res.match[0] == 'delete' then 'delete' else 'invalidate'
-    urls = res.match[1].split ','
+    action = if res.match[1] == 'delete' then 'delete' else 'invalidate'
+    urls = res.match[2].split ','
 
     data = JSON.stringify(
       objects: urls
@@ -33,7 +33,7 @@ module.exports = (robot) ->
 
     eg = new EdgeGrid(client_token, client_secret, access_token, host)
     eg.auth(
-      path: '/ccu/v3/invalidate/url/production'
+      path: "/ccu/v3/#{action}/url/production"
       method: 'POST'
       headers:
           'Content-Type': 'application/json'
@@ -48,9 +48,9 @@ module.exports = (robot) ->
         return
 
       if response.statusCode != 201
-        message = "Error(#{response.statusCode}): #{body.detail}"
+        message = "Error(#{response.statusCode}): #{data.detail}"
       else
-        message = "Success: estimated time #{body.estimatedSeconds} sec"
+        message = "Success: estimated time #{data.estimatedSeconds} sec"
 
       res.send message
 
