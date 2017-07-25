@@ -48,7 +48,7 @@ module.exports = (robot) ->
         return
 
       if response.statusCode != 201
-        message = "Error(#{response.statusCode}): #{data.detail}"
+        message = "Error(#{response.statusCode}): #{data.title}"
       else
         message = "Success: estimated time #{data.estimatedSeconds} sec"
 
