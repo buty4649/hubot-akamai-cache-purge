@@ -23,7 +23,7 @@ client_token = process.env.HUBOT_AKAMAI_CLIENT_TOKEN
 module.exports = (robot) ->
   EdgeGrid = require 'edgegrid'
 
-  robot.respond /akamai (purge|invalidate|delete) cache (https?\S+)/, (res) ->
+  robot.respond /akamai (purge|invalidate|delete) cache (https?\S+)/i, (res) ->
     action = if res.match[0] == 'delete' then 'delete' else 'invalidate'
     urls = res.match[1].split ','
 
