@@ -21,7 +21,7 @@
   },
 
   "peerDependencies": {
-    "hubot": "2.x"
+    "hubot": "3.x"
   },
 
   "devDependencies": {
