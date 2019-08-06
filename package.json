@@ -1,7 +1,7 @@
 {
   "name": "hubot-akamai-cache-purge",
   "description": "A hubot script that provides purge edge content",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "author": "Yuki Koya <buty4649@gmail.com>",
   "license": "MIT",
 
